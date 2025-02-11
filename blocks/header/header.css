@@ -48,7 +48,7 @@ header nav[aria-expanded='true'] {
 header nav p {
   margin: 0;
   line-height: 1;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 header nav a:any-link {

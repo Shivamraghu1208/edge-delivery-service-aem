@@ -97,6 +97,8 @@ header .header[data-block-status="loaded"],
 footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
+
+h1
 h2,
 h3,
 h4,
@@ -108,10 +110,6 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
-}
-
-h1 {
-  margin-top: 10px;
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
