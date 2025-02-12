@@ -54,7 +54,10 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
-  width: 100px;
+  width: 120px;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
 }
 
 /* hamburger */
@@ -148,8 +151,8 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 200px;
+    height: 100px;
 }
 
 /* sections */
