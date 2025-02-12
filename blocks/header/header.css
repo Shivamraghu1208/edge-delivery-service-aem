@@ -167,6 +167,9 @@ header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
   align-self: start;
+  margin-left: 200px;
+  margin-top: 70px;
+
 }
 
 header nav .nav-sections ul {
@@ -202,6 +205,8 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
     padding-right: 16px;
     cursor: pointer;
+    font-family: "aaux-next";
+    font-size: 1rem;
   }
 
   header nav .nav-sections .nav-drop::after {
