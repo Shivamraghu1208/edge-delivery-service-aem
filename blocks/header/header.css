@@ -49,10 +49,12 @@ header nav p {
   margin: 0;
   line-height: 1;
   margin-top: 12px;
+  display: flex;
 }
 
 header nav a:any-link {
   color: currentcolor;
+  width: 100px;
 }
 
 /* hamburger */
