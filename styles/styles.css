@@ -173,7 +173,7 @@ ul li strong{
   color: #83156f;
 }
 
-.cards > ul {
+div.cards > ul {
 margin-bottom: 500px;
 }
 /* buttons */
