@@ -130,6 +130,10 @@ blockquote {
   margin-bottom: 0.25em;
 }
 
+p strong{
+  color: aquamarine;
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
