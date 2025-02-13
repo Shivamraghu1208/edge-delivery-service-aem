@@ -172,7 +172,7 @@ a:hover {
 ul li strong{
   color: #83156f;
 }
-
+/* 
 .cards-wrapper{
   position: absolute;
   transform: translate(-50%, -50%);
@@ -182,7 +182,7 @@ ul li strong{
   margin-left: 1300px;
   margin-bottom: 400px;
 
-}
+} */
 /* buttons */
 a.button:any-link,
 button {
