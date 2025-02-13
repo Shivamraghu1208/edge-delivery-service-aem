@@ -173,6 +173,16 @@ ul li strong{
   color: #83156f;
 }
 
+.cards-wrapper{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  margin-left: 1300px;
+  margin-bottom: 400px;
+
+}
 /* buttons */
 a.button:any-link,
 button {
