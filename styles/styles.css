@@ -172,6 +172,8 @@ a:hover {
 ul li strong{
   color: #83156f;
 }
+
+
 /* 
 .cards-wrapper{
   position: absolute;
@@ -254,6 +256,17 @@ main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
+}
+
+div.cards-wrapper{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  margin-left: 1300px;
+  margin-bottom: 400px;
+
 }
 
 main > .section:first-of-type {
