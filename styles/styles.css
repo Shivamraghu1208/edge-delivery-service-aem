@@ -169,6 +169,9 @@ a:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
 }
+ul li strong{
+  color: #83156f;
+}
 
 /* buttons */
 a.button:any-link,
