@@ -258,7 +258,7 @@ main > .section > div {
   padding: 0 24px;
 }
 
-div.cards-wrapper{
+main > .section > div.cards-wrapper{
   position: absolute;
   transform: translate(-50%, -50%);
   text-align: center;
