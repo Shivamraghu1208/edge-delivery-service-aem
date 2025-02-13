@@ -260,8 +260,8 @@ main > .section > div.cards-wrapper{
 
 }
 
-main > .section > div.cards-wrapper.cards-block{
-
+main > .section > div.cards-wrapper.cards > ul {
+  margin-bottom: 500px;
 }
 main > .section:first-of-type {
   margin-top: 0;
