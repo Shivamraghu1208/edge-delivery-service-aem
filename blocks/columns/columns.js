@@ -49,7 +49,7 @@ window.onscroll = function() {
   const currentScrollY = window.scrollY;
   const viewportHeight = window.innerHeight;
   const pageHeight = document.documentElement.scrollHeight;
-  const stickyThreshold = pageHeight - viewportHeight * 0.3; // Last 30% of the page
+  const stickyThreshold = pageHeight - viewportHeight * 0.8; // Last 30% of the page
 
   // Check if scrolling up
   if (currentScrollY < lastScrollY) {

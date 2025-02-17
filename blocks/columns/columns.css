@@ -29,7 +29,7 @@
 /* Sticky styles */
 .columns > div.sticky {
   position: fixed;
-  bottom: 30%; /* Stick at 30% from the bottom of the viewport */
+  bottom: 80%; /* Stick at 30% from the bottom of the viewport */
   z-index: 100;
 }
 
