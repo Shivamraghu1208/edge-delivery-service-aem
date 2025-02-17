@@ -16,12 +16,8 @@
   order: 0;
 }
 
-.columns > div > div:nth-child(1) {
-  background-color: brown;
-}
 .columns > div > div:nth-child(2) {
-  background-color: blueviolet;
-  margin-bottom: 1980px;
+  margin-bottom: 1870px;
 }
 
 .columns > div > .columns-img-col img {
