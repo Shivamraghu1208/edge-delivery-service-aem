@@ -13,11 +13,11 @@
 }
 
 .cards .cards-card-body {
-  height: 10px;
   margin: 16px;
 }
 
 .cards .cards-card-image {
+  height: 100px;
   line-height: 0;
 }
 
