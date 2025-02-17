@@ -4,6 +4,11 @@
   width: 1500px;
 }
 
+.columns > div.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
 .columns img {
   width: 100%;
 }

@@ -16,3 +16,14 @@ export default function decorate(block) {
     });
   });
 }
+
+window.onscroll = function() {
+  const parentDiv = document.querySelector('.columns > div');
+  const stickyOffset = parentDiv.offsetTop;
+
+  if (window.scrollY >= stickyOffset) {
+    parentDiv.classList.add('sticky');
+  } else {
+    parentDiv.classList.remove('sticky');
+  }
+};
