@@ -1,4 +1,4 @@
-/* .columns > div {
+.columns > div {
   display: flex;
   flex-direction: column;
   width: 1500px;
@@ -13,24 +13,6 @@
   top: 0;
   z-index: 100;
   
-} */
-
-/* Default styles for the parent div */
-.columns > div {
-  display: flex;
-  flex-direction: column;
-  width: 1500px;
-  background-color: lightgray;
-  padding: 20px;
-  border: 1px solid #ccc;
-  transition: top 0.3s ease; /* Smooth transition */
-}
-
-/* Sticky styles */
-.columns > div.sticky {
-  position: fixed;
-  bottom: 80%; /* Stick at 30% from the bottom of the viewport */
-  z-index: 100;
 }
 
 .columns img {
