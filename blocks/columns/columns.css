@@ -1,7 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 1500px;
 }
 
 .columns img {
@@ -18,15 +18,13 @@
 
 .columns > div > div:nth-child(1) {
     margin-bottom: 1870px;
-    background-color: rebeccapurple;
-    flex-basis: 70%;
+    flex-basis: 50%;
   flex-grow: 0; 
   flex-shrink: 0; 
 }
 .columns > div > div:nth-child(2) {
   margin-bottom: 1870px;
-  background-color: aquamarine;
-  flex-basis: 30%;
+  flex-basis: 34%;
   flex-grow: 0; 
   flex-shrink: 0; 
 }
