@@ -21,7 +21,7 @@ window.onscroll = function() {
   const parentDiv = document.querySelector('.columns > div');
   const stickyOffset = parentDiv.offsetTop;
 
-  if (window.scroll >= stickyOffset) {
+  if (window.scrollX >= stickyOffset) {
     parentDiv.classList.add('sticky');
   } else {
     parentDiv.classList.remove('sticky');
