@@ -1,6 +1,7 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  width: 1500px;
 }
 
 .columns img {
@@ -17,11 +18,10 @@
 
 .columns > div > div:nth-child(1) {
   background-color: brown;
-  width: 3100px;
 }
 .columns > div > div:nth-child(2) {
   background-color: blueviolet;
-  margin-bottom: 1999px;
+  margin-bottom: 1980px;
 }
 
 .columns > div > .columns-img-col img {
