@@ -132,6 +132,7 @@ blockquote {
 
 p strong{
   color: #83156f;
+  font-size: var(--heading-font-size-s);
 }
 
 code,
