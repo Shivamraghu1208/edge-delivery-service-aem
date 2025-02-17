@@ -17,17 +17,44 @@ export default function decorate(block) {
   });
 }
 
+// let lastScrollY = window.scrollY; // Track the last scroll position
+
+// window.onscroll = function() {
+//   const parentDiv = document.querySelector('.columns > div');
+//   const stickyOffset = parentDiv.offsetTop;
+//   const currentScrollY = window.scrollY;
+
+//   // Check if scrolling up
+//   if (currentScrollY < lastScrollY) {
+//     // Add sticky class when scrolling up and past the sticky offset
+//     if (currentScrollY >= stickyOffset) {
+//       parentDiv.classList.add('sticky');
+//     } else {
+//       parentDiv.classList.remove('sticky');
+//     }
+//   } else {
+//     // Remove sticky class when scrolling down
+//     parentDiv.classList.remove('sticky');
+//   }
+
+//   // Update the last scroll position
+//   lastScrollY = currentScrollY;
+// };
+
 let lastScrollY = window.scrollY; // Track the last scroll position
 
 window.onscroll = function() {
   const parentDiv = document.querySelector('.columns > div');
   const stickyOffset = parentDiv.offsetTop;
   const currentScrollY = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  const pageHeight = document.documentElement.scrollHeight;
+  const stickyThreshold = pageHeight - viewportHeight * 0.3; // Last 30% of the page
 
   // Check if scrolling up
   if (currentScrollY < lastScrollY) {
-    // Add sticky class when scrolling up and past the sticky offset
-    if (currentScrollY >= stickyOffset) {
+    // Add sticky class when scrolling up and past the sticky threshold
+    if (currentScrollY >= stickyThreshold) {
       parentDiv.classList.add('sticky');
     } else {
       parentDiv.classList.remove('sticky');
