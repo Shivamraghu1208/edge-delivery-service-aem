@@ -17,13 +17,26 @@ export default function decorate(block) {
   });
 }
 
+let lastScrollY = window.scrollY; // Track the last scroll position
+
 window.onscroll = function() {
   const parentDiv = document.querySelector('.columns > div');
   const stickyOffset = parentDiv.offsetTop;
+  const currentScrollY = window.scrollY;
 
-  if (window.scrollX >= stickyOffset) {
-    parentDiv.classList.add('sticky');
+  // Check if scrolling up
+  if (currentScrollY < lastScrollY) {
+    // Add sticky class when scrolling up and past the sticky offset
+    if (currentScrollY >= stickyOffset) {
+      parentDiv.classList.add('sticky');
+    } else {
+      parentDiv.classList.remove('sticky');
+    }
   } else {
+    // Remove sticky class when scrolling down
     parentDiv.classList.remove('sticky');
   }
+
+  // Update the last scroll position
+  lastScrollY = currentScrollY;
 };

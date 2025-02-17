@@ -5,12 +5,14 @@
   background-color: lightgray;
   padding: 20px;
   border: 1px solid #ccc;
+  transition: top 0.3s ease;
 }
 
 .columns > div.sticky {
   position: fixed;
   top: 0;
   z-index: 100;
+  
 }
 .columns img {
   width: 100%;
