@@ -16,8 +16,11 @@
   order: 0;
 }
 
+.columns > div > div:nth-child(1) {
+}
 .columns > div > div:nth-child(2) {
   margin-bottom: 1870px;
+  background-color: aquamarines;
 }
 
 .columns > div > .columns-img-col img {
