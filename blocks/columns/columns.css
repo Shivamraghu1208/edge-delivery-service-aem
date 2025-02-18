@@ -30,13 +30,13 @@
 }
 
 .columns > div > div:nth-child(1) {
-    flex-basis: 50%;
+    flex-basis: 56%;
   flex-grow: 0; 
   flex-shrink: 0; 
 }
 .columns > div > div:nth-child(2) {
   margin-bottom: 1880px;
-    flex-basis: 34%;
+    flex-basis: 45%;
   flex-grow: 0; 
   flex-shrink: 0; 
 }
