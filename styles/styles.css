@@ -185,8 +185,12 @@ div.cards > ul {
 }
 
 div.cards > ul  li {
-  color: #007eaf;
+  background-color: #007EAF;
   border-radius: 15px;
+}
+
+div.cards > ul  li h3{
+  color: white;
 }
 /* buttons */
 a.button:any-link,
