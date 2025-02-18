@@ -94,18 +94,48 @@ export default function decorate(block) {
 //   lastScrollY = currentScrollY;
 // };
 
+// let lastScrollY = window.scrollY; // Track the last scroll position
+
+// window.onscroll = function() {
+//   const parentDiv = document.querySelector('.columns > div');
+//   const currentScrollY = window.scrollY;
+//   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+//   const threshold = pageHeight * 0.5; // 50% of the page height (mid of the page)
+
+//   // Check if scrolling up
+//   if (currentScrollY < lastScrollY) {
+//     // Add sticky class when scrolling up and past the threshold (mid of the page)
+//     if (currentScrollY >= threshold) {
+//       parentDiv.classList.add('sticky');
+//     } else {
+//       parentDiv.classList.remove('sticky');
+//     }
+//   } else {
+//     // Remove sticky class when scrolling down
+//     parentDiv.classList.remove('sticky');
+//   }
+
+//   // Update the last scroll position
+//   lastScrollY = currentScrollY;
+// };
+
 let lastScrollY = window.scrollY; // Track the last scroll position
 
 window.onscroll = function() {
   const parentDiv = document.querySelector('.columns > div');
+  const hero = document.querySelector('.hero'); // Replace with your hero component's selector
   const currentScrollY = window.scrollY;
-  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const threshold = pageHeight * 0.5; // 50% of the page height (mid of the page)
+
+  // Get the height of the hero component
+  const heroHeight = hero.offsetHeight;
+
+  // Calculate the point where the hero is fully on screen (collapsed)
+  const heroCollapsePoint = hero.offsetTop + heroHeight;
 
   // Check if scrolling up
   if (currentScrollY < lastScrollY) {
-    // Add sticky class when scrolling up and past the threshold (mid of the page)
-    if (currentScrollY >= threshold) {
+    // Add sticky class when scrolling up and the hero is fully on screen
+    if (currentScrollY >= heroCollapsePoint) {
       parentDiv.classList.add('sticky');
     } else {
       parentDiv.classList.remove('sticky');
