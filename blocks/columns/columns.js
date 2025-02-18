@@ -134,13 +134,32 @@ export default function decorate(block) {
 //   }
 // });
 
+// let lastScrollTop = 0; // To track the last scroll position
+
+// window.addEventListener('scroll', function() {
+//   const parent = document.querySelector('.columns > div');
+//   const currentScroll = window.scrollY; // Current scroll position
+//   const documentHeight = document.documentElement.scrollHeight;
+//   const twentyPercent = documentHeight * 0.1; // Calculate the top 20% of the page height
+
+//   if (currentScroll < lastScrollTop) { // If the user is scrolling up
+//     if (currentScroll <= twentyPercent) {
+//       parent.classList.add('sticky'); // Add sticky class when top 20% is reached
+//     }
+//   } else {
+//     parent.classList.remove('sticky'); // Remove sticky class when scrolling down
+//   }
+
+//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update the last scroll position
+// });
+
 let lastScrollTop = 0; // To track the last scroll position
 
 window.addEventListener('scroll', function() {
   const parent = document.querySelector('.columns > div');
   const currentScroll = window.scrollY; // Current scroll position
   const documentHeight = document.documentElement.scrollHeight;
-  const heroHeight = document.querySelector('.hero').offsetHeight;
+  const heroHeight = document.querySelector('.hero').offsetHeight; // Get the height of the hero component
   const twentyPercent = documentHeight * 0.1; // Calculate the top 20% of the page height
 
   if (currentScroll < lastScrollTop) { // If the user is scrolling up
@@ -148,12 +167,11 @@ window.addEventListener('scroll', function() {
       parent.classList.add('sticky'); // Add sticky class when top 20% is reached
     }
   } else {
+    // Remove sticky class when scrolling down past the hero component
     if (currentScroll > heroHeight) {
       parent.classList.remove('sticky');
     }
-   // parent.classList.remove('sticky'); // Remove sticky class when scrolling down
   }
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update the last scroll position
 });
-
