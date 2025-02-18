@@ -120,16 +120,36 @@ export default function decorate(block) {
 // };
 
 
+// window.addEventListener('scroll', function() {
+//   const parent = document.querySelector('.columns > div');
+//   const scrollPosition = window.scrollY + window.innerHeight; // Current scroll position plus viewport height
+//   const documentHeight = document.documentElement.scrollHeight;
+
+//   const last20Percent = documentHeight * 0.8; // The point where the last 20% of the page starts
+
+//   if (scrollPosition >= last20Percent) {
+//     parent.classList.add('sticky'); // Add sticky class when within the last 20%
+//   } else {
+//     parent.classList.remove('sticky'); // Remove sticky class when above the last 20%
+//   }
+// });
+
+let lastScrollTop = 0; // To track the last scroll position
+
 window.addEventListener('scroll', function() {
   const parent = document.querySelector('.columns > div');
-  const scrollPosition = window.scrollY + window.innerHeight; // Current scroll position plus viewport height
+  const currentScroll = window.scrollY; // Current scroll position
   const documentHeight = document.documentElement.scrollHeight;
+  const twentyPercent = documentHeight * 0.2; // Calculate the top 20% of the page height
 
-  const last20Percent = documentHeight * 0.8; // The point where the last 20% of the page starts
-
-  if (scrollPosition >= last20Percent) {
-    parent.classList.add('sticky'); // Add sticky class when within the last 20%
+  if (currentScroll < lastScrollTop) { // If the user is scrolling up
+    if (currentScroll <= twentyPercent) {
+      parent.classList.add('sticky'); // Add sticky class when top 20% is reached
+    }
   } else {
-    parent.classList.remove('sticky'); // Remove sticky class when above the last 20%
+    parent.classList.remove('sticky'); // Remove sticky class when scrolling down
   }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update the last scroll position
 });
+
