@@ -119,32 +119,17 @@ export default function decorate(block) {
 //   lastScrollY = currentScrollY;
 // };
 
-let lastScrollY = window.scrollY; // Track the last scroll position
 
-window.onscroll = function() {
-  const parentDiv = document.querySelector('.columns > div');
-  const hero = document.querySelector('.hero'); // Replace with your hero component's selector
-  const currentScrollY = window.scrollY;
+window.addEventListener('scroll', function() {
+  const parent = document.querySelector('.parent');
+  const scrollPosition = window.scrollY + window.innerHeight; // Current scroll position plus viewport height
+  const documentHeight = document.documentElement.scrollHeight;
 
-  // Get the height of the hero component
-  const heroHeight = hero.offsetHeight;
+  const last20Percent = documentHeight * 0.8; // The point where the last 20% of the page starts
 
-  // Calculate the point where the hero is fully on screen (collapsed)
-  const heroCollapsePoint = hero.offsetTop + heroHeight;
-
-  // Check if scrolling up
-  if (currentScrollY < lastScrollY) {
-    // Add sticky class when scrolling up and the hero is fully on screen
-    if (currentScrollY >= heroCollapsePoint) {
-      parentDiv.classList.add('sticky');
-    } else {
-      parentDiv.classList.remove('sticky');
-    }
+  if (scrollPosition >= last20Percent) {
+    parent.classList.add('sticky'); // Add sticky class when within the last 20%
   } else {
-    // Remove sticky class when scrolling down
-    parentDiv.classList.remove('sticky');
+    parent.classList.remove('sticky'); // Remove sticky class when above the last 20%
   }
-
-  // Update the last scroll position
-  lastScrollY = currentScrollY;
-};
+});
