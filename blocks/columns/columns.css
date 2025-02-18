@@ -10,9 +10,10 @@
 
 .columns > div.sticky {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 90%;
   z-index: 1000;
+  transform: translateY(-100%);
   
 }
 .columns img {
