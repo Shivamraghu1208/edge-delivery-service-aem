@@ -181,6 +181,7 @@ div.cards > ul {
   padding: 0;
   margin-bottom: 1050px;
   margin-right: 0px;
+  border-radius: 15px;
 }
 /* buttons */
 a.button:any-link,
