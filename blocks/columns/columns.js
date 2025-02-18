@@ -75,7 +75,7 @@ window.onscroll = function() {
   const stickyOffset = parentDiv.offsetTop;
   const currentScrollY = window.scrollY;
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const threshold = pageHeight * 0.3; // 50% of the page height (mid of the page)
+  const threshold = pageHeight * 0.8; // 50% of the page height (mid of the page)
 
   // Check if scrolling up
   if (currentScrollY < lastScrollY) {
