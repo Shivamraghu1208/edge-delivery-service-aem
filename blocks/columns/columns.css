@@ -4,15 +4,17 @@
   width: 1500px;
   background-color: white;
   padding: 20px;
-  border: 1px solid #ccc;
   transition: top 0.3s ease;
 }
 
 .columns > div.sticky {
   position: fixed;
-  width: 100%;
   top: 75%;
   z-index: 1000;
+  box-shadow: 0 -2px 15px 0 rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  width: 1200px;
+  border-radius: 5px 5px 0 0;
   
 }
 .columns img {
