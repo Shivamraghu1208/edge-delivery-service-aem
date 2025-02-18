@@ -11,10 +11,10 @@
 .columns > div.sticky {
   position: fixed;
   top: 0;
-  z-index: 100;
+  width: 100%;
+  z-index: 1000;
   
 }
-
 .columns img {
   width: 100%;
 }
