@@ -157,7 +157,7 @@ let lastScrollTop = 0; // To track the last scroll position
 
 window.addEventListener('scroll', function () {
   const parent = document.querySelector('.columns > div');
-  const height=360;
+  const height=500;
   const currentScroll = window.scrollY || window.pageYOffset; // Cross-browser scroll position
   const heroHeight = document.querySelector('.hero').offsetHeight - height; // Get the height of the hero component
   const twentyPercent = document.documentElement.scrollHeight * 0.1; // Calculate the top 10% of the page height
