@@ -68,19 +68,44 @@ export default function decorate(block) {
 // };
 
 
+// let lastScrollY = window.scrollY; // Track the last scroll position
+
+// window.onscroll = function() {
+//   const parentDiv = document.querySelector('.columns > div');
+//   const stickyOffset = parentDiv.offsetTop;
+//   const currentScrollY = window.scrollY;
+//   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+//   const threshold = pageHeight * 0.4; // 50% of the page height (mid of the page)
+
+//   // Check if scrolling up
+//   if (currentScrollY < lastScrollY) {
+//     // Add sticky class when scrolling up and past the sticky offset and threshold
+//     if (currentScrollY >= stickyOffset && currentScrollY >= threshold) {
+//       parentDiv.classList.add('sticky');
+//     } else {
+//       parentDiv.classList.remove('sticky');
+//     }
+//   } else {
+//     // Remove sticky class when scrolling down
+//     parentDiv.classList.remove('sticky');
+//   }
+
+//   // Update the last scroll position
+//   lastScrollY = currentScrollY;
+// };
+
 let lastScrollY = window.scrollY; // Track the last scroll position
 
 window.onscroll = function() {
   const parentDiv = document.querySelector('.columns > div');
-  const stickyOffset = parentDiv.offsetTop;
   const currentScrollY = window.scrollY;
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const threshold = pageHeight * 0.4; // 50% of the page height (mid of the page)
+  const threshold = pageHeight * 0.5; // 50% of the page height (mid of the page)
 
   // Check if scrolling up
   if (currentScrollY < lastScrollY) {
-    // Add sticky class when scrolling up and past the sticky offset and threshold
-    if (currentScrollY >= stickyOffset && currentScrollY >= threshold) {
+    // Add sticky class when scrolling up and past the threshold (mid of the page)
+    if (currentScrollY >= threshold) {
       parentDiv.classList.add('sticky');
     } else {
       parentDiv.classList.remove('sticky');
