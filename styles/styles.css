@@ -189,7 +189,7 @@ div.cards > ul  li {
   border-radius: 15px;
 }
 
-div.cards > ul  li h3{
+div.cards > ul  li h3 strong {
   color: white;
 }
 /* buttons */
