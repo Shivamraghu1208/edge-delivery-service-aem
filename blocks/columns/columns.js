@@ -121,7 +121,7 @@ export default function decorate(block) {
 
 
 window.addEventListener('scroll', function() {
-  const parent = document.querySelector('.parent');
+  const parent = document.querySelector('.columns > div');
   const scrollPosition = window.scrollY + window.innerHeight; // Current scroll position plus viewport height
   const documentHeight = document.documentElement.scrollHeight;
 
