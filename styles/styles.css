@@ -183,6 +183,11 @@ div.cards > ul {
   margin-right: 0px;
   border-radius: 15px;
 }
+
+div.cards > ul  li {
+  color: #007eaf;
+  border-radius: 15px;
+}
 /* buttons */
 a.button:any-link,
 button {
