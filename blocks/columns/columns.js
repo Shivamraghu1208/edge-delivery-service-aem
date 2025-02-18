@@ -140,6 +140,7 @@ window.addEventListener('scroll', function() {
   const parent = document.querySelector('.columns > div');
   const currentScroll = window.scrollY; // Current scroll position
   const documentHeight = document.documentElement.scrollHeight;
+  const heroHeight = document.querySelector('.hero').offsetHeight;
   const twentyPercent = documentHeight * 0.1; // Calculate the top 20% of the page height
 
   if (currentScroll < lastScrollTop) { // If the user is scrolling up
@@ -147,7 +148,10 @@ window.addEventListener('scroll', function() {
       parent.classList.add('sticky'); // Add sticky class when top 20% is reached
     }
   } else {
-    parent.classList.remove('sticky'); // Remove sticky class when scrolling down
+    if (currentScroll > heroHeight) {
+      parent.classList.remove('sticky');
+    }
+   // parent.classList.remove('sticky'); // Remove sticky class when scrolling down
   }
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update the last scroll position
