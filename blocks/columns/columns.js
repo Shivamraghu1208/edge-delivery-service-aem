@@ -140,7 +140,7 @@ window.addEventListener('scroll', function() {
   const parent = document.querySelector('.columns > div');
   const currentScroll = window.scrollY; // Current scroll position
   const documentHeight = document.documentElement.scrollHeight;
-  const twentyPercent = documentHeight * 0.2; // Calculate the top 20% of the page height
+  const twentyPercent = documentHeight * 0.1; // Calculate the top 20% of the page height
 
   if (currentScroll < lastScrollTop) { // If the user is scrolling up
     if (currentScroll <= twentyPercent) {
