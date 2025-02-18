@@ -174,7 +174,13 @@ ul li strong{
 }
 
 div.cards > ul {
-margin-bottom: 900px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1050px;
+  margin-right: 0px;
 }
 /* buttons */
 a.button:any-link,
