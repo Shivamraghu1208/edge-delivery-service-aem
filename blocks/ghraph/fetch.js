@@ -32,6 +32,8 @@ async function fetchTestContentFragment() {
   }
 
   async function renderTestContentFragment() {
+    console.log('STart render Test Contnt');
+
     const heroData = await fetchTestContentFragment();
     const hero = document.createElement('div');
     hero.classList.add('hero-image');
