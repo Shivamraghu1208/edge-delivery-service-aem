@@ -78,6 +78,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
+    
     navDrops.forEach((drop) => {
       if (!drop.hasAttribute('tabindex')) {
         drop.setAttribute('tabindex', 0);
@@ -164,3 +165,7 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 }
+
+window.addEventListener('scroll', function () {
+  console.log("hey");
+});
