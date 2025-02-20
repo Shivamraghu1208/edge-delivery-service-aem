@@ -171,7 +171,7 @@ window.addEventListener('scroll', async function () {
   await renderTestContentFragment();
 });
 async function fetchTestContentFragment() {
-  const response = await fetch('http://localhost:4502/graphql/execute.json/global/test qyery', {
+  const response = await fetch('/graphql/execute.json/global/test qyery', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
