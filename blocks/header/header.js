@@ -180,7 +180,7 @@ async function fetchTestContentFragment() {
   const credentials = btoa(`${username}:${password}`);
 
   try {
-    const response = await fetch('http://localhost:4502/graphql/execute.json/global/test qyery', {
+    const response = await fetch('http://localhost:4502/graphql/execute.json/global/test-qyery', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
