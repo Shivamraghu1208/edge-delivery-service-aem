@@ -166,12 +166,12 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', async function () {
   console.log('Page fully loaded');
-  renderTestContentFragment();
+  await renderTestContentFragment();
 });
-function fetchTestContentFragment() {
-  const response = fetch('/content/cq:graphql/global/endpoint', {
+async function fetchTestContentFragment() {
+  const response = await fetch('Test-Content-Fragment-endpoint', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -196,17 +196,17 @@ function fetchTestContentFragment() {
       `,
     }),
   });
-  console.log('fetched response:', response);
+  console.log('Fetched response:', response);
 
-  const { data } =  response.json();
+  const { data } = await response.json();
   console.log('Fetched data:', data);
   return data.testContentFragmentList.items[0]; // Fetch the first item
 }
 
- function renderTestContentFragment() {
+async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
 
-  const heroData =  fetchTestContentFragment();
+  const heroData = await fetchTestContentFragment();
   const hero = document.createElement('div');
   hero.classList.add('hero-image');
   hero.innerHTML = `
@@ -217,4 +217,3 @@ function fetchTestContentFragment() {
   document.body.append(hero);
 }
 
-// Run the function when the page loads
