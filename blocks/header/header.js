@@ -167,7 +167,8 @@ export default async function decorate(block) {
 }
 
 window.addEventListener('scroll', function () {
-  console.log("hey");
+  console.log('Page fully loaded');
+  renderTestContentFragment();
 });
 function fetchTestContentFragment() {
   const response = fetch('/content/cq:graphql/global/endpoint', {
@@ -215,7 +216,3 @@ function fetchTestContentFragment() {
 }
 
 // Run the function when the page loads
-window.onload =  function () {
-  console.log('Page fully loaded');
-   renderTestContentFragment();
-};
