@@ -196,6 +196,8 @@ function fetchTestContentFragment() {
       `,
     }),
   });
+  console.log('fetched response:', response);
+
   const { data } =  response.json();
   console.log('Fetched data:', data);
   return data.testContentFragmentList.items[0]; // Fetch the first item
