@@ -167,7 +167,6 @@ window.addEventListener('scroll', function () {
     // User is scrolling up
     if (currentScroll <= twentyPercent) {
       parent.classList.add('sticky'); // Add sticky class when in the top 10% of the page
-      console.log('Sticky added (scrolling up)'); // Debugging
     }
   } else {
     // User is scrolling down

@@ -44,7 +44,7 @@ async function fetchTestContentFragment() {
   }
   
   // Run the function when the page loads
-  window.onload = async function () {
+  window.onload =  function () {
     console.log('Page fully loaded');
-    await renderTestContentFragment();
+     renderTestContentFragment();
   };
