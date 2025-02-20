@@ -1,3 +1,3 @@
 window.addEventListener('scroll', function () {
-       console.log("hey");
+       console.log("hey1");
   });
