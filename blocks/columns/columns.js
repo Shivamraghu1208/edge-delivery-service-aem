@@ -162,7 +162,6 @@ window.addEventListener('scroll', function () {
   const heroHeight = document.querySelector('.hero').offsetHeight - height; // Get the height of the hero component
   const twentyPercent = document.documentElement.scrollHeight * 0.1; // Calculate the top 10% of the page height
 
-  console.log(`Current Scroll: ${currentScroll}, Hero Height: ${heroHeight}, 20% Height: ${twentyPercent}`); // Debugging
 
   if (currentScroll < lastScrollTop) {
     // User is scrolling up
@@ -173,9 +172,7 @@ window.addEventListener('scroll', function () {
   } else {
     // User is scrolling down
     if (currentScroll > heroHeight) {
-      console.log(`Scrolling past hero: ${currentScroll} > ${heroHeight}`); // Debugging
       parent.classList.remove('sticky'); // Remove sticky class when scrolling past the hero component
-      console.log('Sticky removed (scrolling down)'); // Debugging
     }
   }
 
