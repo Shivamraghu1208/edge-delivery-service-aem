@@ -171,7 +171,7 @@ window.addEventListener('scroll', async function () {
   await renderTestContentFragment();
 });
 async function fetchTestContentFragment() {
-  const response = await fetch('/graphql/execute.json/global/test qyery', {
+  const response = await fetch('http://localhost:4502/graphql/execute.json/global/test qyery', {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
   });
@@ -187,13 +187,13 @@ async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
 
   const heroData = await fetchTestContentFragment();
-  const hero = document.createElement('div');
-  hero.classList.add('hero-image');
-  hero.innerHTML = `
-    <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
-    <h2>${heroData.title}</h2>
-    <p>${heroData.description.plaintext}</p>
-  `;
-  document.body.append(hero);
+  // const hero = document.createElement('div');
+  // hero.classList.add('hero-image');
+  // hero.innerHTML = `
+  //   <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
+  //   <h2>${heroData.title}</h2>
+  //   <p>${heroData.description.plaintext}</p>
+  // `;
+  // document.body.append(hero);
 }
 
