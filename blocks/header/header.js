@@ -173,8 +173,8 @@ window.addEventListener('scroll', async function () {
 
 async function fetchTestContentFragment() {
   // Replace with your AEM username and password
-  const username = 'your-username';
-  const password = 'your-password';
+  const username = 'admin';
+  const password = 'admin';
 
   // Encode the credentials in Base64
   const credentials = btoa(`${username}:${password}`);
