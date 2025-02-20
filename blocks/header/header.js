@@ -172,35 +172,16 @@ window.addEventListener('scroll', async function () {
 });
 async function fetchTestContentFragment() {
   const response = await fetch('/graphql/execute.json/global/test qyery', {
-    method: 'POST',
+    method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      query: `
-      {
-        testContentFragmentList {
-          items {
-            title
-            _path
-            imagePath {
-              __typename
-              ... on ImageRef {
-                _path
-              }
-            }
-            description {
-              plaintext
-            }
-          }
-        }
-      }
-      `,
-    }),
   });
+
   console.log('Fetched response:', response);
   const { data } = await response.json();
   console.log('Fetched data:', data);
   return data.testContentFragmentList.items[0]; // Fetch the first item
 }
+
 
 async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
