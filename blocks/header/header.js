@@ -170,16 +170,37 @@ window.addEventListener('scroll', async function () {
   console.log('Page fully loaded');
   await renderTestContentFragment();
 });
-async function fetchTestContentFragment() {
-  const response = await fetch('http://localhost:4502/graphql/execute.json/global/test qyery', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
 
-  console.log('Fetched response:', response);
-  const { data } = await response.json();
-  console.log('Fetched data:', data);
-  return data.testContentFragmentList.items[0]; // Fetch the first item
+async function fetchTestContentFragment() {
+  // Replace with your AEM username and password
+  const username = 'your-username';
+  const password = 'your-password';
+
+  // Encode the credentials in Base64
+  const credentials = btoa(`${username}:${password}`);
+
+  try {
+    const response = await fetch('http://localhost:4502/graphql/execute.json/global/test qyery', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Basic ${credentials}`, // Add Basic Authentication header
+      },
+    });
+
+    console.log('Fetched response:', response);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const { data } = await response.json();
+    console.log('Fetched data:', data);
+    return data.testContentFragmentList.items[0]; // Fetch the first item
+  } catch (error) {
+    console.error('Error fetching content fragment:', error);
+    return null;
+  }
 }
 
 
