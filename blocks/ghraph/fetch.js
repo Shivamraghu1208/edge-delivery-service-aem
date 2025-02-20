@@ -5,45 +5,46 @@ async function fetchTestContentFragment() {
       body: JSON.stringify({
         query: `
         {
-            testContentFragmentList {
-              items {
-                title
-                _path
-                imagePath {
-                  __typename
-                  ... on ImageRef {
-                    _path
-                  }
+          testContentFragmentList {
+            items {
+              title
+              _path
+              imagePath {
+                __typename
+                ... on ImageRef {
+                  _path
                 }
-                description {
-                  plaintext
-                }
+              }
+              description {
+                plaintext
               }
             }
           }
-          
+        }
         `,
       }),
     });
     const { data } = await response.json();
-    console.log('Fetched data:', heroData);
-    console.log('Hero element:', hero);
-    return data.heroImageList.items[0]; // Fetch the first Hero Image
+    console.log('Fetched data:', data);
+    return data.testContentFragmentList.items[0]; // Fetch the first item
   }
-
+  
   async function renderTestContentFragment() {
-    console.log('STart render Test Contnt');
-
+    console.log('Start rendering Test Content');
+  
     const heroData = await fetchTestContentFragment();
     const hero = document.createElement('div');
     hero.classList.add('hero-image');
     hero.innerHTML = `
-      <img src="${heroData.image._path}" alt="${heroData.title}" />
+      <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
       <h2>${heroData.title}</h2>
-      <p>${heroData.description}</p>
+      <p>${heroData.description.plaintext}</p>
     `;
     document.body.append(hero);
   }
   
-  renderTestContentFragment();
-  
+  // Run the function when the page loads
+  window.onload = async function () {
+    console.log('Page fully loaded');
+    await renderTestContentFragment();
+  };
