@@ -171,7 +171,7 @@ window.addEventListener('scroll', async function () {
   await renderTestContentFragment();
 });
 async function fetchTestContentFragment() {
-  const response = await fetch('Test-Content-Fragment-endpoint', {
+  const response = await fetch('/content/cq:graphql/global/endpoint', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -197,7 +197,6 @@ async function fetchTestContentFragment() {
     }),
   });
   console.log('Fetched response:', response);
-
   const { data } = await response.json();
   console.log('Fetched data:', data);
   return data.testContentFragmentList.items[0]; // Fetch the first item
