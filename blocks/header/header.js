@@ -166,15 +166,15 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
- // Step 1: Select the anchor tag with the class "button"
- const button = document.querySelector('a.button');
+//  // Step 1: Select the anchor tag with the class "button"
+//  const button = document.querySelector('default-content-wrapperp.a.button');
 
- // Step 2: Disable the default href behavior
- button.addEventListener('click', function (event) {
-   event.preventDefault(); // Prevent the default link behavior
-   console.log('Href link disabled, custom logic will run now.');
+//  // Step 2: Disable the default href behavior
+//  button.addEventListener('click', function (event) {
+//    event.preventDefault(); // Prevent the default link behavior
+//    console.log('Href link disabled, custom logic will run now.');
 
- });
+//  });
 
 
 window.addEventListener('scroll', async function () {
