@@ -126,16 +126,20 @@ async function loadPage() {
   loadDelayed();
 }
 
- // Step 1: Select the anchor tag with the class "button"
- $(document).ready(function() { 
-  const button = document.querySelector('a.button');
 
+
+ setTimeout(() => {
+  const button = document.querySelector('a.button');
   // Step 2: Disable the default href behavior
   button.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default link behavior
     console.log('Href link disabled, custom logic will run now.');
  
  });
- });
+ }, 5000);
+
+ document.addEventListener("DOMContentLoaded", (event)=>{
+  console.log("Dom content loaded");
+})
 
 loadPage();
