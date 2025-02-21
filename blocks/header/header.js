@@ -166,10 +166,28 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
+const buttonLink = document.querySelector('.button');
+
+// Add an event listener to the anchor element
+buttonLink.addEventListener('click', function(event) {
+  // Prevent the default action of the link (navigation)
+  event.preventDefault();
+
+  // Now handle the click action
+  console.log('Button clicked, but no navigation will occur.');
+  
+  // You can call any function here to perform your desired action
+  // For example, you could call renderTestContentFragment() here if needed
+});
+
+
+
 window.addEventListener('scroll', async function () {
   console.log('Page fully loaded');
   await renderTestContentFragment();
 });
+
+ 
 
 async function fetchTestContentFragment() {
   // Replace with your AEM username and password
