@@ -183,8 +183,7 @@ async function fetchTestContentFragment() {
     const response = await fetch('http://localhost:4502/graphql/execute.json/global/test-qyery', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Basic ${credentials}`, // Add Basic Authentication header
+        'Content-Type': 'application/json'
       },
     });
 
