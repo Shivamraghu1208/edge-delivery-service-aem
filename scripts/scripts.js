@@ -125,16 +125,37 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
- document.addEventListener("DOMContentLoaded", (event)=>{
-  console.log("Dom content loaded");
-  const button = document.querySelector('a.button');
-  button.addEventListener('click',async function (event) {
-    event.preventDefault(); 
-    await renderTestContentFragment();
-    console.log('Href link disabled, custom logic will run now.');
+
+// setTimeout(() => {
+//   const button = document.querySelector('a.button');
+//   button.addEventListener('click',async function (event) {
+//     event.preventDefault(); 
+//     await renderTestContentFragment();
+//     console.log('Href link disabled, custom logic will run now.');
  
- });
-})
+//  });
+//  }, 5000);
+
+//  document.addEventListener("DOMContentLoaded", (event)=>{
+//   console.log("Dom content loaded");
+// })
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM content loaded");
+
+  // Select the button and add the event listener
+  const button = document.querySelector('a.button');
+  if (button) {
+    button.addEventListener('click', async (event) => {
+      event.preventDefault(); // Disable the default href behavior
+      console.log('Href link disabled, custom logic will run now.');
+
+      await renderTestContentFragment(); // Call your async function
+    });
+  } else {
+    console.error('Button with class "button" not found!');
+  }
+});
 
 async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
