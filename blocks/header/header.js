@@ -176,6 +176,10 @@ setTimeout(() => {
  });
  }, 5000);
 
+ document.addEventListener("DOMContentLoaded", (event)=>{
+  console.log("Dom content loaded");
+})
+
 async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
 
