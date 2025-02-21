@@ -145,7 +145,7 @@ async function renderTestContentFragment() {
 
   const fetchData = await fetchTestContentFragment();
   const div = document.createElement('div');
-  hero.classList.add('hero-image');
+  div.classList.add('hero-image');
   div.innerHTML = `
     <img src="${fetchData.imagePath._path}" alt="${fetchData.title}" />
     <h2>${fetchData.title}</h2>
