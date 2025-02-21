@@ -208,13 +208,13 @@ async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
 
   const heroData = await fetchTestContentFragment();
-  // const hero = document.createElement('div');
-  // hero.classList.add('hero-image');
-  // hero.innerHTML = `
-  //   <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
-  //   <h2>${heroData.title}</h2>
-  //   <p>${heroData.description.plaintext}</p>
-  // `;
-  // document.body.append(hero);
+  const hero = document.createElement('div');
+  hero.classList.add('hero-image');
+  hero.innerHTML = `
+    <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
+    <h2>${heroData.title}</h2>
+    <p>${heroData.description.plaintext}</p>
+  `;
+  document.body.append(hero);
 }
 
