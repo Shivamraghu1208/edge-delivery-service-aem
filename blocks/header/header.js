@@ -166,17 +166,34 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
-window.addEventListener('scroll', async function () {
-  console.log('Page fully loaded');
-  await renderTestContentFragment();
-});
+setTimeout(() => {
+  const button = document.querySelector('a.button');
+  button.addEventListener('click',async function (event) {
+    event.preventDefault(); 
+    await renderTestContentFragment();
+    console.log('Href link disabled, custom logic will run now.');
+ 
+ });
+ }, 5000);
+
+async function renderTestContentFragment() {
+  console.log('Start rendering Test Content');
+
+  const fetchData = await fetchTestContentFragment();
+  const div = document.createElement('div');
+  hero.classList.add('hero-image');
+  div.innerHTML = `
+    <img src="${fetchData.imagePath._path}" alt="${fetchData.title}" />
+    <h2>${fetchData.title}</h2>
+    <p>${fetchData.description.plaintext}</p>
+  `;
+  document.body.append(div);
+}
 
 async function fetchTestContentFragment() {
-  // Replace with your AEM username and password
   const username = 'admin';
   const password = 'admin';
 
-  // Encode the credentials in Base64
   const credentials = btoa(`${username}:${password}`);
 
   try {
@@ -184,7 +201,7 @@ async function fetchTestContentFragment() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Basic ${credentials}`, // Add Basic Authentication header
+        'Authorization': `Basic ${credentials}`, 
       },
     });
 
@@ -196,24 +213,10 @@ async function fetchTestContentFragment() {
 
     const { data } = await response.json();
     console.log('Fetched data:', data);
-    return data.testContentFragmentList.items[0]; // Fetch the first item
+    return data.testContentFragmentList.items[0];
   } catch (error) {
     console.error('Error fetching content fragment:', error);
     return null;
   }
-}
-
-async function renderTestContentFragment() {
-  console.log('Start rendering Test Content');
-
-  const heroData = await fetchTestContentFragment();
-  const hero = document.createElement('div');
-  hero.classList.add('hero-image');
-  hero.innerHTML = `
-    <img src="${heroData.imagePath._path}" alt="${heroData.title}" />
-    <h2>${heroData.title}</h2>
-    <p>${heroData.description.plaintext}</p>
-  `;
-  document.body.append(hero);
 }
 
