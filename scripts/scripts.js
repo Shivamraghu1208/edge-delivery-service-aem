@@ -125,7 +125,6 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
-
 setTimeout(() => {
   const button = document.querySelector('a.button');
   button.addEventListener('click',async function (event) {
