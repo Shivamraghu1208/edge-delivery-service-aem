@@ -216,6 +216,11 @@ button {
   white-space: nowrap;
 }
 
+.hero-image {
+background-color: #83156f;
+
+}
+
 a.button:hover,
 a.button:focus,
 button:hover,
