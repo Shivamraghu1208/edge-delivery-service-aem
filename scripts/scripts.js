@@ -133,7 +133,7 @@ setTimeout(() => {
     console.log('Href link disabled, custom logic will run now.');
  
  });
- }, 500);
+ }, 100);
 
  document.addEventListener("DOMContentLoaded", (event)=>{
   console.log("Dom content loaded");
@@ -147,6 +147,8 @@ async function renderTestContentFragment() {
   div.classList.add('hero-image');
   div.innerHTML = `
     <img src="${fetchData.imagePath._path}" alt="${fetchData.title}" />
+    <h2>${fetchData.title}</h2>
+    <p>${fetchData.description.plaintext}</p>
   `;
   document.body.append(div);
 }
