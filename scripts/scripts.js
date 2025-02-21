@@ -125,8 +125,8 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
 }
-
-setTimeout(() => {
+ document.addEventListener("DOMContentLoaded", (event)=>{
+  console.log("Dom content loaded");
   const button = document.querySelector('a.button');
   button.addEventListener('click',async function (event) {
     event.preventDefault(); 
@@ -134,10 +134,6 @@ setTimeout(() => {
     console.log('Href link disabled, custom logic will run now.');
  
  });
- }, 5000);
-
- document.addEventListener("DOMContentLoaded", (event)=>{
-  console.log("Dom content loaded");
 })
 
 async function renderTestContentFragment() {
