@@ -126,42 +126,19 @@ async function loadPage() {
   loadDelayed();
 }
 
-// setTimeout(() => {
-//   const button = document.querySelector('a.button');
-//   button.addEventListener('click',async function (event) {
-//     event.preventDefault(); 
-//     await renderTestContentFragment();
-//     console.log('Href link disabled, custom logic will run now.');
+setTimeout(() => {
+  const button = document.querySelector('a.button');
+  button.addEventListener('click',async function (event) {
+    event.preventDefault(); 
+    await renderTestContentFragment();
+    console.log('Href link disabled, custom logic will run now.');
  
-//  });
-//  }, 5000);
+ });
+ }, 5000);
 
-//  document.addEventListener("DOMContentLoaded", (event)=>{
-//   console.log("Dom content loaded");
-// })
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM content loaded");
-
-  // Select the button and add the event listener
-  // const button = document.querySelector('.button-container a.button');
-  // if (button) {
-  //   object.addEventListener("click", myScript);
-  //   button.addEventListener('click', async (event) => {
-  //     event.preventDefault(); // Disable the default href behavior
-  //     console.log('Href link disabled, custom logic will run now.');
-
-  //     await renderTestContentFragment(); // Call your async function
-  //   });
-  // } else {
-  //   console.error('Button with class "button" not found!');
-  // }
-  $('.button-container a.button').click(async function(event){
-      event.preventDefault(); // Disable the default href behavior
-      console.log('Href link disabled, custom logic will run now.');s
-      await renderTestContentFragment(); // Call your async function
-  })
-});
+ document.addEventListener("DOMContentLoaded", (event)=>{
+  console.log("Dom content loaded");
+})
 
 async function renderTestContentFragment() {
   console.log('Start rendering Test Content');
