@@ -166,28 +166,21 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
-const buttonLink = document.querySelector('.button');
+ // Step 1: Select the anchor tag with the class "button"
+ const button = document.querySelector('a.button');
 
-// Add an event listener to the anchor element
-buttonLink.addEventListener('click', function(event) {
-  // Prevent the default action of the link (navigation)
-  event.preventDefault();
+ // Step 2: Disable the default href behavior
+ button.addEventListener('click', function (event) {
+   event.preventDefault(); // Prevent the default link behavior
+   console.log('Href link disabled, custom logic will run now.');
 
-  // Now handle the click action
-  console.log('Button clicked, but no navigation will occur.');
-  
-  // You can call any function here to perform your desired action
-  // For example, you could call renderTestContentFragment() here if needed
-});
-
+ });
 
 
 window.addEventListener('scroll', async function () {
   console.log('Page fully loaded');
   await renderTestContentFragment();
 });
-
- 
 
 async function fetchTestContentFragment() {
   // Replace with your AEM username and password
