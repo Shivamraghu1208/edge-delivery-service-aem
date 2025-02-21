@@ -296,6 +296,7 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
 .hero-image {
   position: relative; /* For positioning child elements */
   width: 100%; /* Full width */
@@ -305,7 +306,11 @@ main .section.highlight {
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
   background: linear-gradient(135deg, #6a11cb, #2575fc); /* Fallback background gradient */
-  min-height: 300px; /* Ensure a minimum height if the image fails */
+  min-height: 300px; /* Ensure a minimum height */
+  display: flex; /* Use flexbox for flexible sizing */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center content vertically */
+  padding: 20px; /* Add padding for spacing */
 }
 
 .hero-image img {
@@ -315,20 +320,14 @@ main .section.highlight {
 }
 
 .hero-image h2 {
-  position: absolute; /* Position the title over the image */
-  top: 20px; /* Distance from the top */
-  left: 20px; /* Distance from the left */
   color: white; /* Text color */
   font-size: 2.5rem; /* Large font size */
   font-weight: bold; /* Bold text */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to text for better readability */
-  margin: 0; /* Remove default margin */
+  margin: 0 0 10px 0; /* Add margin below the title */
 }
 
 .hero-image p {
-  position: absolute; /* Position the description over the image */
-  bottom: 20px; /* Distance from the bottom */
-  left: 20px; /* Distance from the left */
   color: white; /* Text color */
   font-size: 1.2rem; /* Medium font size */
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add shadow to text for better readability */
