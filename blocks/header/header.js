@@ -4,6 +4,8 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+<button id="myButton">Click me to load content</button>
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
@@ -166,7 +168,7 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
-window.addEventListener('scroll', async function () {
+window.addEventListener('', async function () {
   console.log('Page fully loaded');
   await renderTestContentFragment();
 });
