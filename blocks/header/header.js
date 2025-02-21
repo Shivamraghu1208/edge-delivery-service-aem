@@ -166,16 +166,6 @@ export default async function decorate(block) {
   block.append(navWrapper);
 }
 
-
-const button = document.createElement('button');
-button.textContent = 'Click Me!'; // Set the text of the button
-
-// Get the header element by its ID
-const header = document.getElementById('header');
-
-// Append the button to the header
-header.appendChild(button);
-
 window.addEventListener('scroll', async function () {
   console.log('Page fully loaded');
   await renderTestContentFragment();
