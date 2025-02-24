@@ -133,7 +133,7 @@ setTimeout(() => {
     console.log('Href link disabled, custom logic will run now.');
  
  });
- }, 100);
+ }, 500);
 
  document.addEventListener("DOMContentLoaded", (event)=>{
   console.log("Dom content loaded");
